@@ -1,0 +1,27 @@
+#Task 1: Simple Calculator
+print("Welcome to the simple Calculator Task!")
+
+n1=float(input("Enter the first operand: "))
+n2=float(input("Enter the second operand: "))
+
+print("Choose an operation:")
+print("1. Addition (+)")
+print("2. Subtraction (-)")
+print("3. Multiplication (*)")
+print("4. Division (/)")
+
+choice=input("Enter the number corresponding to your choice: ")
+if choice=='1':
+  sum=n1+n2
+  print(f"Sum: {sum}")
+elif choice == "2":
+    diff = n1 - n2
+    print(f"Difference: {diff}")
+elif choice == "3":
+    prod = n1 * n2
+    print(f"Product: {prod}")
+elif choice == "4" and n2 != 0:
+    quo = n1 / n2
+    print(f"Division: {quo}")
+else:
+    print("Division by zero not possible.")
