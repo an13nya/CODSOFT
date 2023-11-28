@@ -1,0 +1,71 @@
+#Task 3: Rock, paper and Scissors.
+rocks = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+papers = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissor = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+import random
+
+print("Let's play rock, paper and scissors!")
+while True:
+    user = input("Choose 'R' for rock, 'P' for paper, or 'S' for scissors: ").upper()
+
+    if user not in ['R', 'P', 'S']:
+        print("Invalid choice. Please choose 'R', 'P', or 'S'.")
+        continue
+
+    if user == 'R':
+        print("You chose rock")
+        print(rocks)
+    elif user == 'P':
+        print("You chose paper")
+        print(papers)
+    else:
+        print("You chose scissors")
+        print(scissor)
+
+    computer = random.choice(['R', 'P', 'S'])
+    if computer == 'R':
+        print("Computer chose rock")
+        print(rocks)
+    elif computer == 'P':
+        print("Computer chose paper")
+        print(papers)
+    else:
+        print("Computer chose scissors")
+        print(scissor)
+
+    if computer == user:
+        print("It's a tie :)")
+    elif (computer == 'P' and user == 'R') or (computer == 'R' and user == 'S') or (computer == 'S' and user == 'P'):
+        print("You lose :(")
+    else:
+        print("You win! Yay<3")
+
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    if play_again != 'yes':
+        print("Thanks for playing! Goodbye!")
+        break
